@@ -9,7 +9,6 @@ similarity_score = pickle.load(open('similarityScore.pkl', 'rb'))
 drama_movies = pickle.load(open('dramaMovies.pkl', 'rb'))
 comedy_movies = pickle.load(open('comedyMovies.pkl', 'rb'))
 action_movies = pickle.load(open('actionMovies.pkl', 'rb'))
-thriller_movies = pickle.load(open('thrillerMovies.pkl', 'rb'))
 romance_movies = pickle.load(open('romMovies.pkl', 'rb'))
 crime_movies = pickle.load(open('crimeMovies.pkl', 'rb'))
 horror_movies = pickle.load(open('horrorMovies.pkl', 'rb'))
@@ -69,14 +68,6 @@ def action():
         st.write('Genre:', genre)
         st.write('IMDb Score:', imdb_score)
 
-def thriller():
-    st.write('Here are the top recommendations')
-    for a,b in thriller_movies.items():
-        st.write('Name:', a)
-        genre = b['Genre']
-        imdb_score = b['IMDb Score']
-        st.write('Genre:', genre)
-        st.write('IMDb Score:', imdb_score)
 
 def romance():
     st.write('Here are the top recommendations')
@@ -144,8 +135,6 @@ if st.button('Recommend this genre shows'):
         comedy()
     elif query2 == 'action':
         action()
-    elif query2 == 'thriller':
-        thriller()
     elif query2 == 'romance':
         romance()
     elif query2 == 'crime':
